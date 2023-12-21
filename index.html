@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Donation App</title>
+</head>
+<body>
+
+<div id="donation-form">
+    <h2>Donate for a Cause</h2>
+    <form id="payment-form">
+        <label for="donor-name">Your Name:</label>
+        <input type="text" id="donor-name" name="donor-name" required>
+
+        <label for="donor-email">Email:</label>
+        <input type="email" id="donor-email" name="donor-email" required>
+
+        <label for="donor-phone">Phone Number:</label>
+        <input type="tel" id="donor-phone" name="donor-phone" required>
+
+        <label for="donor-address">Address:</label>
+        <textarea id="donor-address" name="donor-address" rows="4" required></textarea>
+
+        <label for="payment-option">Select Payment Option:</label>
+        <select id="payment-option" name="payment-option" required>
+            <option value="upi">UPI</option>
+            <option value="card">Credit/Debit Card</option>
+        </select>
+
+        <div id="upi-details" class="payment-details">
+            <label for="upi-id">UPI ID:</label>
+            <input type="text" id="upi-id" name="upi-id" required>
+        </div>
+
+        <div id="card-details" class="payment-details">
+            <label for="card-number">Card Number:</label>
+            <input type="text" id="card-number" name="card-number" required>
+
+            <label for="expiry-date">Expiry Date:</label>
+            <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
+
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" required>
+        </div>
+
+        <button type="button" onclick="submitDonation()">Donate Now</button>
+    </form>
+
+    <div id="thank-you-message" style="display: none;">
+        <p>Thank you, <span id="donor-thank-you-name"></span>, for your generous donation!</p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
